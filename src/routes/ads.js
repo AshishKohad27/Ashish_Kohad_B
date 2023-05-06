@@ -21,7 +21,10 @@ adsRoutes.get("/", async (req, res) => {
                 ],
             })),
         };
-        console.log("search:", search.$or[0] || "");
+        console.log("search:",keywords[0], search.$or[0] || "");
+        console.log("search:",keywords[1], search.$or[1] || "");
+        console.log("search:",keywords[2], search.$or[2] || "");
+        
 
         //1. For single Search
         // let data = await adsModel.find({ company: { $regex: query, $options: "i" } });

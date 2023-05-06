@@ -17,7 +17,7 @@ adsRoutes.get("/", async (req, res) => {
                     { primaryText: new RegExp(item, "i") },
                     { headline: new RegExp(item, "i") },
                     { company: new RegExp(item, "i") },
-                    { company: new RegExp(item, "i") },
+                    { description: new RegExp(item, "i") },
                 ],
             })),
         };

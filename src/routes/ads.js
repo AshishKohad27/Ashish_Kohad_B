@@ -24,7 +24,7 @@ adsRoutes.get("/", async (req, res) => {
         // console.log("search:",keywords[0], search.$or[0] || "");
         // console.log("search:",keywords[1], search.$or[1] || "");
         // console.log("search:",keywords[2], search.$or[2] || "");
-        
+
 
         //1. For single Search
         // let data = await adsModel.find({ company: { $regex: query, $options: "i" } });
@@ -35,9 +35,9 @@ adsRoutes.get("/", async (req, res) => {
         //3. with the help of aggration
         let data = await adsModel.aggregate([{ $match: search }]);
 
-        res.send({ message: "Get Data Successfully!", data });
+        res.status(200).send({ message: "Get Data Successfully!", data });
     } catch (e) {
-        res.send({ message: "Error Occurs!", desc: e.message, data: [] });
+        res.status(400).send({ message: "Error Occurs!", desc: e.message, data: [] });
     }
 });
 
